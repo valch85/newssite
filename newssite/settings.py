@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'rn8$butsv574eh82-1a6x*vpbxoz-q5t+dzhi@q8=^fzke3$6z'
+SECRET_KEY = '5#$4gi_8skm7-_8^n9j40hj0nb+(o*m7_d8sh6(t206ra)3v*$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +77,14 @@ WSGI_APPLICATION = 'newssite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #‘ENGINE’: ‘django.db.backends.sqlite3’,
+        #‘NAME’: os.path.join(BASE_DIR, ‘db.sqlite3’),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'newssitedb',
+        'USER': 'newssiteuser',
+        'PASSWORD': 'newssitepasswd',
+        'HOST': 'localhost', # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
