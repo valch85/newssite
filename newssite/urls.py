@@ -19,6 +19,6 @@ from django.urls import path, include
 admin.autodiscover()
 
 urlpatterns = [
-    path('news/', include('news.urls')),
+    path('', include('news.urls')),
     path('admin/', admin.site.urls),
 ]
