@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import News
 
 # Create your views here.
@@ -11,6 +10,7 @@ def index(request):
 
 
 def detail(request, news_id):
-    #return HttpResponse("You're looking at news %s." % news_id)
-    return HttpResponse("You're looking at news %s." % news_id)
+    new = get_object_or_404(News, pk=news_id)
+    return render(request, 'news/detail.html', {'new': new})
+
 
