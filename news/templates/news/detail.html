@@ -5,12 +5,9 @@
     <title>News detail</title>
 </head>
 <body>
-    {{ new }}
-    <h1>{{ news_name.news_desc }}</h1>
+    <h1>{{ new }}</h1>
     <ul>
-    {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }}</li>
-    {% endfor %}
+        {{ new.news_desc }}
     </ul>
 </body>
 </html>
