@@ -2,6 +2,7 @@ version: '3.3'
 services:
   db:
     image: mysql:latest
+    container_name: mysql_for_newssite
     command: --default-authentication-plugin=mysql_native_password
     ports:
       # <Port exposed> : < MySQL Port running inside container>
@@ -18,6 +19,30 @@ services:
       MYSQL_DATABASE: 'newssitedb'
       MYSQL_USER: 'newssiteuser'
       MYSQL_PASSWORD: 'newssitepasswd'
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.6.2
+    container_name: elasticsearch_for_newssite
+    environment:
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+      
+
 # Names our volume
 volumes:
   db_folder:
+  esdata1:
+    driver: local
+
+networks:
+  esnet:
