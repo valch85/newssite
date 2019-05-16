@@ -1,0 +1,5 @@
+pymysql
+django
+pip
+pytz
+setuptools
