@@ -31,7 +31,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - esdata1:/usr/share/elasticsearch/data
+      - esdata2:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -41,7 +41,7 @@ services:
 # Names our volume
 volumes:
   db_folder:
-  esdata1:
+  esdata2:
     driver: local
 
 networks:

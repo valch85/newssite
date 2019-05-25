@@ -1,5 +1,6 @@
 pymysql
 django
-pip
 pytz
 setuptools
+mysqlclient
+# https://pypi.org/project/mysqlclient/
