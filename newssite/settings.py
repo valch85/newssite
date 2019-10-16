@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_elasticsearch_dsl',
     'news',
 ]
 
@@ -49,6 +50,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
 
 ROOT_URLCONF = 'newssite.urls'
 
@@ -77,13 +83,11 @@ WSGI_APPLICATION = 'newssite.wsgi.application'
 
 DATABASES = {
     'default': {
-        #‘ENGINE’: ‘django.db.backends.sqlite3’,
-        #‘NAME’: os.path.join(BASE_DIR, ‘db.sqlite3’),
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'newssitedb',
         'USER': 'newssiteuser',
         'PASSWORD': 'newssitepasswd',
-        'HOST': 'localhost', # Or an IP Address that your DB is hosted on
+        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
