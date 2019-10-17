@@ -17,6 +17,10 @@
     <p>No news are available.</p>
 {% endif %}
 
+<form action="{% url 'news:results' %}" method="post">
+  <input name="search_string" type="text" placeholder="Search...">
+</form>
+
     <div class="footer">
         <details>
         <summary>No copyright 2019.</summary>

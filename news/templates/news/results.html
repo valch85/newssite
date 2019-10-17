@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+
+<h1 align="center">Search result.</h1>
+
+{% if news_list_by_name %}
+    <ul>
+    <p>Available news by name.</p>
+    {% for news in news_list_by_name %}
+        <li><a href="{% url 'news:detail' news.id %}">{{ news.news_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No news available by name.</p>
+{% endif %}
+
+{% if results_by_desc %}
+    <ul>
+    <p>Available news by description.</p>
+    {% for news in results_by_desc %}
+        <li><a href="{% url 'news:detail' news.id %}">{{ news.news_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No news available by description.</p>
+{% endif %}
+
+    <div class="footer">
+        <details>
+        <summary>No copyright 2019.</summary>
+        <p> - by Valentyn Chubukin.</p>
+        <p>All content and graphics on this web site are for testing purpose only.</p>
+        </details>
+    </div>
+
+</body>
+</html>

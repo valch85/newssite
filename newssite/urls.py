@@ -20,5 +20,6 @@ admin.autodiscover()
 
 urlpatterns = [
     path('', include('news.urls')),
+    path('results/', include('news.urls')),
     path('admin/', admin.site.urls),
 ]

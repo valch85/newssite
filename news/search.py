@@ -16,6 +16,7 @@ class NewsPostIndex(DocType):
         index = 'newssite-index'
 
 
+
 #def gendata():
 #    for news_name in News.objects.all():
 #        yield {
@@ -30,8 +31,9 @@ class NewsPostIndex(DocType):
 #    es = Elasticsearch()
 #    bulk(client=es, actions=gendata())
 
-def bulk_indexing():
-    NewsPostIndex.init()
-    es = Elasticsearch()
-    bulk(client=es, actions=(News.indexing(b) for b in News.objects.iterator()))
+#def bulk_indexing():
+#    NewsPostIndex.init()
+#    es = Elasticsearch()
+#    bulk(client=es, actions=(News.indexing(b) for b in News.objects.iterator()))
+
 
