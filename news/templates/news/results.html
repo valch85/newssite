@@ -21,7 +21,7 @@
 
 {% if news_list_by_desc %}
     <ul>
-    <p>Available news by description.</p>
+    <p>Available news by context.</p>
     {% for news in news_list_by_desc %}
         <li><a href="{% url 'news:detail' news.id %}">{{ news.news_name }}</a></li>
     {% endfor %}

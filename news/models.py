@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+# Create news
 class News(models.Model):
     def __str__(self):
         return self.news_name

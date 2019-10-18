@@ -5,4 +5,3 @@ setuptools
 mysqlclient==1.3.12
 elasticsearch-dsl
 django-elasticsearch-dsl
-# https://pypi.org/project/mysqlclient/
