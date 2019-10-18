@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .search import NewsPostIndex
 
 class News(models.Model):
     def __str__(self):

@@ -19,10 +19,10 @@
     <p>No news available by name.</p>
 {% endif %}
 
-{% if results_by_desc %}
+{% if news_list_by_desc %}
     <ul>
     <p>Available news by description.</p>
-    {% for news in results_by_desc %}
+    {% for news in news_list_by_desc %}
         <li><a href="{% url 'news:detail' news.id %}">{{ news.news_name }}</a></li>
     {% endfor %}
     </ul>
